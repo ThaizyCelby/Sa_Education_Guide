@@ -1,4 +1,1748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SA Education Guide — Plan Your Future After Matric</title>
+    <style>
+        :root {
+            --primary: #0b4f6c;
+            --primary-light: #1a6f8f;
+            --primary-dark: #083849;
+            --accent: #e8a817;
+            --accent-light: #f5c34b;
+            --success: #2d8a4e;
+            --warning: #d4770a;
+            --danger: #c0392b;
+            --bg: #f7f9fb;
+            --surface: #ffffff;
+            --surface-alt: #eef3f7;
+            --text: #1a1a2e;
+            --text-secondary: #555770;
+            --text-muted: #7a7d95;
+            --border: #dde3ea;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+            --shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+            --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06);
+            --radius-sm: 6px;
+            --radius: 10px;
+            --radius-lg: 16px;
+            --transition: 0.2s ease;
+            --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            --max-width: 1200px;
+        }
 
-<html>
-  <h1>Test</h1>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ── Header / Navigation ────────────────────── */
+        .header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            height: 60px;
+            gap: 16px;
+        }
+        .logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--primary);
+            text-decoration: none;
+            white-space: nowrap;
+            letter-spacing: -0.3px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 900;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 4px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.9rem;
+            padding: 8px 14px;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+            white-space: nowrap;
+            cursor: pointer;
+        }
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+            background: #e8f4f8;
+        }
+        .nav-links a.nav-cta {
+            background: var(--accent);
+            color: #1a1a2e;
+            font-weight: 700;
+            padding: 8px 16px;
+            border-radius: var(--radius);
+        }
+        .nav-links a.nav-cta:hover {
+            background: var(--accent-light);
+            box-shadow: var(--shadow-sm);
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.6rem;
+            cursor: pointer;
+            color: var(--text);
+            padding: 4px 8px;
+        }
+
+        /* ── Main Content ───────────────────────────── */
+        .main {
+            flex: 1;
+            max-width: var(--max-width);
+            width: 100%;
+            margin: 0 auto;
+            padding: 24px 20px 48px;
+        }
+        .page-section {
+            display: none;
+            animation: fadeSlideIn 0.35s ease;
+        }
+        .page-section.active {
+            display: block;
+        }
+        @keyframes fadeSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ── Hero / Home ────────────────────────────── */
+        .hero {
+            text-align: center;
+            padding: 48px 20px 40px;
+            background: linear-gradient(170deg, #e6f0f7 0%, #f7f9fb 40%, #ffffff 100%);
+            border-radius: var(--radius-lg);
+            margin-bottom: 32px;
+            border: 1px solid var(--border);
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+        .hero .subtitle {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-search-wrap {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .hero-search-wrap input {
+            width: 100%;
+            padding: 14px 50px 14px 18px;
+            font-size: 1rem;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            background: var(--surface);
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+        .hero-search-wrap input:focus {
+            outline: none;
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 4px rgba(11, 79, 108, 0.08);
+        }
+        .hero-search-wrap .search-btn {
+            position: absolute;
+            right: 6px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+        .hero-search-wrap .search-btn:hover {
+            background: var(--primary-dark);
+        }
+        .hero-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+        .hero-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 16px 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+        .hero-card:hover {
+            border-color: var(--primary-light);
+            box-shadow: var(--shadow);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+        .hero-card .icon {
+            font-size: 1.8rem;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        /* ── Section Headings ───────────────────────── */
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 6px;
+        }
+        .section-subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        /* ── Cards Grid ─────────────────────────────── */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px;
+            transition: var(--transition);
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+        .card:hover {
+            box-shadow: var(--shadow);
+            border-color: #c5d3df;
+            transform: translateY(-2px);
+        }
+        .card .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            background: #e8f4f8;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .card .badge.orange {
+            background: #fef3e0;
+            color: #b85c08;
+        }
+        .card .badge.green {
+            background: #e6f4ea;
+            color: #1a6b3a;
+        }
+        .card h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: var(--text);
+        }
+        .card .institution {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+        .card .meta {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .card .meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* ── APS Calculator ─────────────────────────── */
+        .aps-container {
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .aps-subject-row {
+            display: grid;
+            grid-template-columns: 1fr 140px 50px;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .aps-subject-row select {
+            padding: 10px 12px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            background: var(--surface);
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+        }
+        .aps-subject-row select:focus {
+            outline: none;
+            border-color: var(--primary-light);
+            box-shadow: 0 0 0 3px rgba(11, 79, 108, 0.06);
+        }
+        .aps-points {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--primary);
+            text-align: center;
+            min-width: 40px;
+        }
+        .aps-total {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin: 20px 0 8px;
+            color: var(--primary-dark);
+        }
+        .aps-total .big {
+            font-size: 3rem;
+            display: block;
+            line-height: 1;
+        }
+        .aps-results {
+            margin-top: 16px;
+            padding: 16px;
+            background: #f0f7fa;
+            border-radius: var(--radius);
+            border: 1px dashed var(--border);
+        }
+        .aps-results h4 {
+            margin-bottom: 8px;
+            color: var(--primary-dark);
+        }
+        .aps-results .qualifying {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .aps-results .qual-course {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 8px 14px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .aps-results .qual-course:hover {
+            border-color: var(--primary-light);
+            box-shadow: var(--shadow-sm);
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+            text-decoration: none;
+            text-align: center;
+        }
+        .btn-primary {
+            background: var(--primary);
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            box-shadow: var(--shadow);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        .btn-outline:hover {
+            background: #e8f4f8;
+        }
+        .btn-accent {
+            background: var(--accent);
+            color: #1a1a2e;
+            font-weight: 700;
+        }
+        .btn-accent:hover {
+            background: var(--accent-light);
+            box-shadow: var(--shadow);
+        }
+        .btn-sm {
+            padding: 6px 14px;
+            font-size: 0.8rem;
+        }
+
+        /* ── Filter Bar ─────────────────────────────── */
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        .filter-bar select,
+        .filter-bar input {
+            padding: 10px 14px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            background: var(--surface);
+            transition: var(--transition);
+            min-width: 140px;
+        }
+        .filter-bar select:focus,
+        .filter-bar input:focus {
+            outline: none;
+            border-color: var(--primary-light);
+        }
+        .filter-bar input {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        /* ── Detail View (Course / Career) ──────────── */
+        .detail-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+        .back-btn {
+            background: var(--surface-alt);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 8px 14px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: var(--transition);
+            color: var(--text-secondary);
+        }
+        .back-btn:hover {
+            background: #dde5ed;
+        }
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .detail-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px;
+            box-shadow: var(--shadow-sm);
+        }
+        .detail-card.full-width {
+            grid-column: 1 / -1;
+        }
+        .detail-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .detail-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .detail-card ul li {
+            padding: 6px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+        .detail-card ul li:last-child {
+            border-bottom: none;
+        }
+        .tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .tag {
+            background: #e8f4f8;
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+        .tag:hover {
+            background: #cde7f2;
+        }
+        .salary-bar {
+            height: 10px;
+            border-radius: 5px;
+            background: #e0e5ea;
+            margin: 8px 0;
+            overflow: hidden;
+        }
+        .salary-fill {
+            height: 100%;
+            border-radius: 5px;
+            background: linear-gradient(90deg, #2d8a4e, #4caf50);
+        }
+        .demand-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+        .demand-high {
+            color: #2d8a4e;
+        }
+        .demand-medium {
+            color: #d4770a;
+        }
+        .demand-low {
+            color: #c0392b;
+        }
+
+        /* ── Job Listings ───────────────────────────── */
+        .job-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 18px 20px;
+            margin-bottom: 10px;
+            transition: var(--transition);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .job-card:hover {
+            box-shadow: var(--shadow);
+            border-color: #c5d3df;
+        }
+        .job-card .job-info h4 {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+        .job-card .job-info .company {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        .job-card .job-meta {
+            display: flex;
+            gap: 16px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* ── Toast / Notification ──────────────────── */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #1a1a2e;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: var(--radius);
+            font-weight: 500;
+            font-size: 0.9rem;
+            z-index: 999;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            box-shadow: var(--shadow-lg);
+        }
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Footer ─────────────────────────────────── */
+        .footer {
+            text-align: center;
+            padding: 16px 20px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            background: var(--surface);
+        }
+
+        /* ── Responsive ─────────────────────────────── */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-wrap: wrap;
+                height: auto;
+                padding: 10px 14px;
+            }
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 2px;
+                padding-top: 8px;
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            .detail-grid {
+                grid-template-columns: 1fr;
+            }
+            .aps-subject-row {
+                grid-template-columns: 1fr 100px 40px;
+                gap: 6px;
+            }
+            .aps-subject-row select {
+                font-size: 0.8rem;
+                padding: 8px 6px;
+            }
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            .filter-bar {
+                flex-direction: column;
+            }
+            .filter-bar select,
+            .filter-bar input {
+                width: 100%;
+                min-width: auto;
+            }
+        }
+        @media (max-width: 400px) {
+            .hero-cards {
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+            }
+            .hero-card {
+                font-size: 0.75rem;
+                padding: 12px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══════════════ HEADER / NAV ═══════════════ -->
+    <header class="header">
+        <div class="header-inner">
+            <a class="logo" href="#" data-nav="home">
+                <span class="logo-icon">SA</span> SA Education Guide
+            </a>
+            <button class="mobile-menu-btn" aria-label="Menu" id="mobileMenuBtn">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" data-nav="home" class="active">Home</a></li>
+                <li><a href="#" data-nav="aps">APS Calculator</a></li>
+                <li><a href="#" data-nav="courses">Courses</a></li>
+                <li><a href="#" data-nav="careers">Careers</a></li>
+                <li><a href="#" data-nav="jobs">Jobs</a></li>
+                <li><a href="#" data-nav="search" class="nav-cta">🔍 Global Search</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- ═══════════════ MAIN CONTENT ═══════════════ -->
+    <main class="main" id="mainContent">
+
+        <!-- ─── 01 HOME / LANDING ─────────────────────── -->
+        <section class="page-section active" id="page-home">
+            <div class="hero">
+                <h1>Plan your future after matric.</h1>
+                <p class="subtitle">Universities, TVET colleges, courses, careers and jobs — in one place.</p>
+                <div class="hero-search-wrap">
+                    <input type="text" id="heroSearchInput" placeholder="Search a course, career, or institution...">
+                    <button class="search-btn" id="heroSearchBtn">🔍</button>
+                </div>
+                <div class="hero-cards">
+                    <a class="hero-card" data-nav="aps"><span class="icon">🧮</span>APS Calculator</a>
+                    <a class="hero-card" data-nav="courses"><span class="icon">📚</span>Course Directory</a>
+                    <a class="hero-card" data-nav="careers"><span class="icon">💼</span>Career Explorer</a>
+                    <a class="hero-card" data-nav="jobs"><span class="icon">💻</span>Job Listings</a>
+                </div>
+            </div>
+            <!-- Quick stats / features -->
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;">
+                <div class="card" style="cursor:default;text-align:center;">
+                    <span style="font-size:2rem;">🏛️</span>
+                    <h3 style="font-size:1rem;">26+ Institutions</h3>
+                    <p style="font-size:0.8rem;color:var(--text-muted);">Universities &amp; TVET Colleges</p>
+                </div>
+                <div class="card" style="cursor:default;text-align:center;">
+                    <span style="font-size:2rem;">📖</span>
+                    <h3 style="font-size:1rem;">200+ Courses</h3>
+                    <p style="font-size:0.8rem;color:var(--text-muted);">Across all fields of study</p>
+                </div>
+                <div class="card" style="cursor:default;text-align:center;">
+                    <span style="font-size:2rem;">🧭</span>
+                    <h3 style="font-size:1rem;">Career Pathways</h3>
+                    <p style="font-size:0.8rem;color:var(--text-muted);">From course to career, mapped</p>
+                </div>
+                <div class="card" style="cursor:default;text-align:center;">
+                    <span style="font-size:2rem;">📋</span>
+                    <h3 style="font-size:1rem;">Entry-Level Jobs</h3>
+                    <p style="font-size:0.8rem;color:var(--text-muted);">Matric &amp; graduate opportunities</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── 02 APS CALCULATOR ────────────────────── -->
+        <section class="page-section" id="page-aps">
+            <h2 class="section-title">🧮 APS Calculator</h2>
+            <p class="section-subtitle">Select your subjects and achievement levels to calculate your Admission Point Score.</p>
+            <div class="aps-container" id="apsCalculator">
+                <p style="font-weight:600;margin-bottom:12px;">Select <strong>6 or 7 subjects</strong> and their achievement levels:</p>
+                <div id="apsSubjectRows"></div>
+                <button class="btn btn-outline btn-sm" id="addSubjectBtn" style="margin-top:6px;">+ Add Subject (up to 7)</button>
+                <div class="aps-total">
+                    Your APS: <span class="big" id="apsTotalScore">—</span>
+                </div>
+                <p style="text-align:center;font-size:0.85rem;color:var(--text-muted);" id="apsPassType"></p>
+                <div class="aps-results" id="apsQualifyingCourses">
+                    <h4>🎓 Courses You May Qualify For:</h4>
+                    <div class="qualifying" id="apsQualList">
+                        <span style="color:var(--text-muted);font-size:0.85rem;">Select subjects &amp; levels to see qualifying courses…</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── 03 COURSE DIRECTORY ──────────────────── -->
+        <section class="page-section" id="page-courses">
+            <h2 class="section-title">📚 Course Directory</h2>
+            <p class="section-subtitle">Browse, filter, and compare courses across South African institutions.</p>
+            <div class="filter-bar">
+                <input type="text" id="courseSearchInput" placeholder="🔍 Search courses…">
+                <select id="courseFieldFilter">
+                    <option value="">All Fields</option>
+                    <option value="ICT">ICT &amp; Computing</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Health">Health Sciences</option>
+                    <option value="Business">Business &amp; Commerce</option>
+                    <option value="Education">Education</option>
+                    <option value="Science">Science</option>
+                </select>
+                <select id="courseTypeFilter">
+                    <option value="">All Institution Types</option>
+                    <option value="University">University</option>
+                    <option value="TVET College">TVET College</option>
+                </select>
+                <button class="btn btn-outline btn-sm" id="resetCourseFilter">Reset</button>
+            </div>
+            <div class="cards-grid" id="courseCardsGrid"></div>
+            <p style="text-align:center;margin-top:16px;color:var(--text-muted);" id="courseCount"></p>
+        </section>
+
+        <!-- ─── 04 COURSE DETAIL (dynamic) ───────────── -->
+        <section class="page-section" id="page-course-detail">
+            <div class="detail-header">
+                <button class="back-btn" data-nav="courses">← Back to Courses</button>
+                <span style="color:var(--text-muted);">Course Detail</span>
+            </div>
+            <div id="courseDetailContent"></div>
+        </section>
+
+        <!-- ─── 05 CAREER EXPLORER ───────────────────── -->
+        <section class="page-section" id="page-careers">
+            <h2 class="section-title">💼 Career Explorer</h2>
+            <p class="section-subtitle">Explore in-demand careers, salary ranges, and study paths.</p>
+            <div class="filter-bar">
+                <input type="text" id="careerSearchInput" placeholder="🔍 Search careers…">
+                <select id="careerFieldFilter">
+                    <option value="">All Fields</option>
+                    <option value="ICT">ICT</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Health">Health</option>
+                    <option value="Business">Business</option>
+                    <option value="Education">Education</option>
+                </select>
+            </div>
+            <div class="cards-grid" id="careerCardsGrid"></div>
+            <p style="text-align:center;margin-top:16px;color:var(--text-muted);" id="careerCount"></p>
+            <!-- Career detail inline -->
+            <div id="careerDetailInline" style="margin-top:20px;"></div>
+        </section>
+
+        <!-- ─── 06 JOBS & GLOBAL SEARCH ──────────────── -->
+        <section class="page-section" id="page-jobs">
+            <h2 class="section-title">💻 Entry-Level &amp; Matric-Only Jobs</h2>
+            <p class="section-subtitle">Find jobs suited for matriculants and recent graduates across South Africa.</p>
+            <div class="filter-bar">
+                <input type="text" id="jobSearchInput" placeholder="🔍 Search jobs by title, company, or location…">
+                <select id="jobLocationFilter">
+                    <option value="">All Locations</option>
+                    <option value="Gauteng">Gauteng</option>
+                    <option value="Western Cape">Western Cape</option>
+                    <option value="KwaZulu-Natal">KwaZulu-Natal</option>
+                    <option value="Eastern Cape">Eastern Cape</option>
+                </select>
+            </div>
+            <div id="jobListings"></div>
+            <p style="text-align:center;margin-top:16px;color:var(--text-muted);" id="jobCount"></p>
+        </section>
+
+        <!-- ─── GLOBAL SEARCH ────────────────────────── -->
+        <section class="page-section" id="page-search">
+            <h2 class="section-title">🔍 Global Search</h2>
+            <p class="section-subtitle">Search across institutions, courses, careers, and jobs.</p>
+            <div class="hero-search-wrap" style="max-width:600px;margin:0 auto 24px;">
+                <input type="text" id="globalSearchInput" placeholder="Search anything…">
+                <button class="search-btn" id="globalSearchBtn">🔍</button>
+            </div>
+            <div id="globalSearchResults"></div>
+        </section>
+
+    </main>
+
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="footer">
+        SA Education Guide &copy; 2026 — Built for South African learners. | Data is indicative; always verify with institutions.
+    </footer>
+
+    <!-- ═══════════════ TOAST ═══════════════ -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+        (function() {
+            // ──────────────────────────────────────────────
+            // DATA STORE (mock — replace with Django API calls)
+            // ──────────────────────────────────────────────
+            const SUBJECTS = [
+                'English HL', 'English FAL', 'Afrikaans HL', 'Afrikaans FAL', 'isiZulu HL', 'isiZulu FAL',
+                'Mathematics', 'Mathematical Literacy', 'Physical Sciences', 'Life Sciences',
+                'Geography', 'History', 'Accounting', 'Business Studies', 'Economics',
+                'Information Technology', 'Computer Applications Technology', 'Engineering Graphics & Design',
+                'Visual Arts', 'Dramatic Arts', 'Music', 'Life Orientation'
+            ];
+
+            const INSTITUTIONS = [
+                { name: 'University of Johannesburg', short: 'UJ', type: 'University',
+                    campus: 'Auckland Park Campus' },
+                { name: 'University of the Witwatersrand', short: 'Wits', type: 'University', campus: 'Braamfontein' },
+                { name: 'University of Cape Town', short: 'UCT', type: 'University', campus: 'Rondebosch' },
+                { name: 'Stellenbosch University', short: 'SU', type: 'University', campus: 'Stellenbosch' },
+                { name: 'University of Pretoria', short: 'UP', type: 'University', campus: 'Hatfield' },
+                { name: 'University of KwaZulu-Natal', short: 'UKZN', type: 'University', campus: 'Westville' },
+                { name: 'Tshwane University of Technology', short: 'TUT', type: 'University',
+                campus: 'Pretoria Campus' },
+                { name: 'Cape Peninsula University of Technology', short: 'CPUT', type: 'University',
+                    campus: 'Bellville' },
+                { name: 'Ekurhuleni West TVET College', short: 'EWC', type: 'TVET College', campus: 'Germiston' },
+                { name: 'False Bay TVET College', short: 'FBC', type: 'TVET College', campus: 'Fish Hoek' },
+                { name: 'Tshwane North TVET College', short: 'TNC', type: 'TVET College', campus: 'Pretoria' },
+            ];
+
+            const COURSES = [
+                { id: 1, name: 'BSc Computer Science', institution: 'University of Johannesburg', type: 'University',
+                    field: 'ICT', apsRequired: 30, requirements: 'English HL/FAL Level 4, Mathematics Level 5, Physical Sciences Level 4, NSC Bachelor\'s pass',
+                    description: 'Study the theory and practice of computing — algorithms, data structures, software design, and artificial intelligence. Prepares you for a career in software development, data science, or academia.',
+                    careers: ['Software Developer', 'Data Scientist', 'Systems Analyst'],
+                    duration: '3 years', campus: 'Auckland Park Campus' },
+                { id: 2, name: 'BSc Data Science', institution: 'University of the Witwatersrand', type: 'University',
+                    field: 'ICT', apsRequired: 34, requirements: 'English HL/FAL Level 5, Mathematics Level 6, NSC Bachelor\'s pass',
+                    description: 'Extract insights from data using statistics, machine learning, and programming. Highly sought-after in finance, healthcare, and tech.',
+                    careers: ['Data Scientist', 'Business Analyst', 'Software Developer'],
+                    duration: '3 years', campus: 'Braamfontein' },
+                { id: 3, name: 'BEng Civil Engineering', institution: 'University of Pretoria', type: 'University',
+                    field: 'Engineering', apsRequired: 32, requirements: 'English HL/FAL Level 4, Mathematics Level 5, Physical Sciences Level 5, NSC Bachelor\'s pass',
+                    description: 'Design and oversee construction of infrastructure — bridges, roads, dams, and buildings.',
+                    careers: ['Civil Engineer', 'Project Manager', 'Structural Engineer'],
+                    duration: '4 years', campus: 'Hatfield' },
+                { id: 4, name: 'BEng Mechanical Engineering', institution: 'Stellenbosch University', type: 'University',
+                    field: 'Engineering', apsRequired: 33, requirements: 'English HL/FAL Level 4, Mathematics Level 6, Physical Sciences Level 5, NSC Bachelor\'s pass',
+                    description: 'Apply principles of physics and materials science to design, manufacture, and maintain mechanical systems.',
+                    careers: ['Mechanical Engineer', 'Design Engineer', 'Maintenance Manager'],
+                    duration: '4 years', campus: 'Stellenbosch' },
+                { id: 5, name: 'Bachelor of Nursing', institution: 'University of Cape Town', type: 'University',
+                    field: 'Health', apsRequired: 28, requirements: 'English HL/FAL Level 4, Life Sciences Level 4, NSC Bachelor\'s pass',
+                    description: 'Train as a professional nurse with clinical placements in hospitals and community clinics.',
+                    careers: ['Registered Nurse', 'Clinical Nurse Specialist', 'Nurse Educator'],
+                    duration: '4 years', campus: 'Rondebosch' },
+                { id: 6, name: 'BCom Accounting', institution: 'University of KwaZulu-Natal', type: 'University',
+                    field: 'Business', apsRequired: 28, requirements: 'English HL/FAL Level 4, Mathematics Level 4, NSC Bachelor\'s pass',
+                    description: 'Master financial accounting, auditing, taxation, and management accounting.',
+                    careers: ['Accountant', 'Auditor', 'Financial Analyst'],
+                    duration: '3 years', campus: 'Westville' },
+                { id: 7, name: 'BEd Senior Phase & FET Teaching', institution: 'University of Johannesburg',
+                    type: 'University', field: 'Education', apsRequired: 26,
+                    requirements: 'English HL/FAL Level 4, NSC Bachelor\'s pass', description: 'Qualify as a teacher for Grades 7–12 with specialisation in two subjects.',
+                    careers: ['Teacher', 'Head of Department', 'Curriculum Advisor'],
+                    duration: '4 years', campus: 'Auckland Park Campus' },
+                { id: 8, name: 'Diploma in Information Technology', institution: 'Tshwane University of Technology',
+                    type: 'University', field: 'ICT', apsRequired: 22,
+                    requirements: 'English HL/FAL Level 3, Mathematics Level 3 or Mathematical Literacy Level 5, NSC Diploma pass',
+                    description: 'Practical training in programming, networking, and IT support.',
+                    careers: ['Junior Developer', 'IT Support Technician', 'Network Administrator'],
+                    duration: '3 years', campus: 'Pretoria Campus' },
+                { id: 9, name: 'Diploma in Electrical Engineering', institution: 'Cape Peninsula University of Technology',
+                    type: 'University', field: 'Engineering', apsRequired: 24,
+                    requirements: 'English HL/FAL Level 3, Mathematics Level 4, Physical Sciences Level 3, NSC Diploma pass',
+                    description: 'Hands-on training in electrical systems, power distribution, and electronics.',
+                    careers: ['Electrician', 'Electrical Technician', 'Maintenance Engineer'],
+                    duration: '3 years', campus: 'Bellville' },
+                { id: 10, name: 'NC(V) Office Administration', institution: 'Ekurhuleni West TVET College',
+                    type: 'TVET College', field: 'Business', apsRequired: 14, requirements: 'Grade 9 or NSC pass',
+                    description: 'Learn office management, communication, and computer skills for administrative roles.',
+                    careers: ['Office Administrator', 'Receptionist', 'Data Capturer'],
+                    duration: '3 years', campus: 'Germiston' },
+                { id: 11, name: 'NC(V) Engineering & Related Design', institution: 'False Bay TVET College',
+                    type: 'TVET College', field: 'Engineering', apsRequired: 14, requirements: 'Grade 9 or NSC pass',
+                    description: 'Practical skills in welding, fitting & turning, and engineering fundamentals.',
+                    careers: ['Artisan', 'Welder', 'Fitter & Turner'],
+                    duration: '3 years', campus: 'Fish Hoek' },
+                { id: 12, name: 'NC(V) Hospitality', institution: 'Tshwane North TVET College', type: 'TVET College',
+                    field: 'Business', apsRequired: 12, requirements: 'Grade 9 or NSC pass',
+                    description: 'Training in food preparation, hospitality services, and customer care.',
+                    careers: ['Chef', 'Hotel Receptionist', 'Restaurant Manager'],
+                    duration: '3 years', campus: 'Pretoria' },
+                { id: 13, name: 'BSc Applied Mathematics', institution: 'University of Cape Town', type: 'University',
+                    field: 'Science', apsRequired: 35, requirements: 'English HL/FAL Level 5, Mathematics Level 6, Physical Sciences Level 5, NSC Bachelor\'s pass',
+                    description: 'Deep mathematical training with applications in finance, physics, and data analysis.',
+                    careers: ['Data Scientist', 'Quantitative Analyst', 'Research Scientist'],
+                    duration: '3 years', campus: 'Rondebosch' },
+                { id: 14, name: 'Higher Certificate in IT', institution: 'Ekurhuleni West TVET College',
+                    type: 'TVET College', field: 'ICT', apsRequired: 16, requirements: 'NSC pass with English Level 3',
+                    description: 'Entry-level IT qualification covering basic programming, hardware, and software.',
+                    careers: ['IT Support Technician', 'Help Desk Operator', 'Junior Developer'],
+                    duration: '1 year', campus: 'Germiston' },
+            ];
+
+            const CAREERS = [
+                { id: 1, title: 'Software Developer', field: 'ICT', demand: 'high', salaryMin: 180000,
+                    salaryMax: 650000, description: 'Designs, builds and maintains software systems.',
+                    studyPaths: ['BSc Computer Science', 'Diploma in IT', 'Higher Certificate in IT'],
+                    videoUrl: '#', skills: ['Programming', 'Problem-solving', 'Teamwork'] },
+                { id: 2, title: 'Data Scientist', field: 'ICT', demand: 'high', salaryMin: 250000, salaryMax: 900000,
+                    description: 'Analyses complex data to help organisations make better decisions.',
+                    studyPaths: ['BSc Data Science', 'BSc Applied Mathematics', 'BSc Computer Science'],
+                    videoUrl: '#', skills: ['Statistics', 'Machine Learning', 'Python'] },
+                { id: 3, title: 'Civil Engineer', field: 'Engineering', demand: 'medium', salaryMin: 220000,
+                    salaryMax: 750000, description: 'Plans, designs and oversees construction of infrastructure.',
+                    studyPaths: ['BEng Civil Engineering'], videoUrl: '#',
+                    skills: ['Design', 'Project Management', 'Maths'] },
+                { id: 4, title: 'Mechanical Engineer', field: 'Engineering', demand: 'medium', salaryMin: 230000,
+                    salaryMax: 780000, description: 'Designs and tests mechanical devices and systems.',
+                    studyPaths: ['BEng Mechanical Engineering'], videoUrl: '#',
+                    skills: ['CAD', 'Thermodynamics', 'Problem-solving'] },
+                { id: 5, title: 'Registered Nurse', field: 'Health', demand: 'high', salaryMin: 160000, salaryMax: 420000,
+                    description: 'Provides patient care in hospitals, clinics, and community settings.',
+                    studyPaths: ['Bachelor of Nursing'], videoUrl: '#',
+                skills: ['Patient Care', 'Communication', 'Empathy'] },
+                { id: 6, title: 'Accountant', field: 'Business', demand: 'medium', salaryMin: 190000, salaryMax: 600000,
+                    description: 'Prepares and examines financial records for organisations.',
+                    studyPaths: ['BCom Accounting'], videoUrl: '#', skills: ['Attention to Detail', 'Maths', 'Ethics'] },
+                { id: 7, title: 'Teacher', field: 'Education', demand: 'high', salaryMin: 150000, salaryMax: 380000,
+                    description: 'Educates learners in primary or secondary school settings.',
+                    studyPaths: ['BEd Senior Phase & FET Teaching'], videoUrl: '#',
+                    skills: ['Communication', 'Patience', 'Leadership'] },
+                { id: 8, title: 'Electrician', field: 'Engineering', demand: 'high', salaryMin: 140000, salaryMax: 400000,
+                    description: 'Installs and maintains electrical systems in buildings and industry.',
+                    studyPaths: ['Diploma in Electrical Engineering', 'NC(V) Engineering & Related Design'],
+                    videoUrl: '#', skills: ['Wiring', 'Safety', 'Troubleshooting'] },
+                { id: 9, title: 'Business Analyst', field: 'Business', demand: 'medium', salaryMin: 210000,
+                    salaryMax: 680000, description: 'Analyses business needs and recommends solutions.',
+                    studyPaths: ['BSc Data Science', 'BCom Accounting'], videoUrl: '#',
+                    skills: ['Analysis', 'Communication', 'IT'] },
+            ];
+
+            const JOBS = [
+                { id: 1, title: 'Junior Developer', company: 'TechCorp SA', location: 'Gauteng', type: 'Full-time',
+                    minQual: 'Diploma in IT', salary: 'R8,000–R15,000/month', posted: '2 days ago' },
+                { id: 2, title: 'Data Entry Clerk', company: 'AdminPro Solutions', location: 'Western Cape',
+                    type: 'Full-time', minQual: 'Matric Certificate', salary: 'R5,500–R8,000/month',
+                posted: '1 week ago' },
+                { id: 3, title: 'IT Support Technician', company: 'NetWorks Inc', location: 'Gauteng', type: 'Contract',
+                    minQual: 'Higher Certificate in IT', salary: 'R7,000–R12,000/month', posted: '3 days ago' },
+                { id: 4, title: 'Sales Assistant', company: 'RetailMax', location: 'KwaZulu-Natal', type: 'Full-time',
+                    minQual: 'Matric Certificate', salary: 'R4,800–R7,500/month', posted: '5 days ago' },
+                { id: 5, title: 'Junior Accountant', company: 'FinServe Group', location: 'Gauteng', type: 'Full-time',
+                    minQual: 'BCom Accounting', salary: 'R10,000–R18,000/month', posted: '1 day ago' },
+                { id: 6, title: 'Receptionist', company: 'MediClinic', location: 'Western Cape', type: 'Full-time',
+                    minQual: 'Matric Certificate', salary: 'R5,000–R7,000/month', posted: '4 days ago' },
+                { id: 7, title: 'Apprentice Electrician', company: 'PowerTech', location: 'Eastern Cape',
+                    type: 'Apprenticeship', minQual: 'NC(V) Engineering', salary: 'R4,500–R6,500/month',
+                    posted: '1 week ago' },
+                { id: 8, title: 'Call Centre Agent', company: 'ConnectTel', location: 'Gauteng', type: 'Full-time',
+                    minQual: 'Matric Certificate', salary: 'R5,000–R7,500/month', posted: '2 days ago' },
+                { id: 9, title: 'Junior Web Developer', company: 'WebStudio', location: 'Western Cape', type: 'Remote',
+                    minQual: 'Diploma in IT', salary: 'R9,000–R16,000/month', posted: '6 days ago' },
+                { id: 10, title: 'Admin Assistant', company: 'GovServices', location: 'KwaZulu-Natal', type: 'Full-time',
+                    minQual: 'Matric Certificate', salary: 'R5,200–R8,000/month', posted: '3 days ago' },
+            ];
+
+            // ──────────────────────────────────────────────
+            // STATE
+            // ──────────────────────────────────────────────
+            let currentPage = 'home';
+            let apsSubjects = [
+                { subject: '', level: 0 },
+                { subject: '', level: 0 },
+                { subject: '', level: 0 },
+                { subject: '', level: 0 },
+                { subject: '', level: 0 },
+                { subject: '', level: 0 },
+            ];
+            let selectedCareerId = null;
+            let selectedCourseId = null;
+
+            // ──────────────────────────────────────────────
+            // DOM REFS
+            // ──────────────────────────────────────────────
+            const navLinks = document.getElementById('navLinks');
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mainContent = document.getElementById('mainContent');
+            const toast = document.getElementById('toast');
+
+            // ──────────────────────────────────────────────
+            // NAVIGATION
+            // ──────────────────────────────────────────────
+            function navigateTo(page, data = null) {
+                currentPage = page;
+                // Update nav active state
+                document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+                const navMatch = document.querySelector(`.nav-links a[data-nav="${page}"]`);
+                if (navMatch) navMatch.classList.add('active');
+                // Show/hide sections
+                document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+                const target = document.getElementById('page-' + page);
+                if (target) target.classList.add('active');
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                // Close mobile menu
+                navLinks.classList.remove('open');
+                // Render page content
+                renderPage(page, data);
+                // Update URL hash
+                window.location.hash = page;
+            }
+
+            function renderPage(page, data) {
+                switch (page) {
+                    case 'home':
+                        break;
+                    case 'aps':
+                        renderApsCalculator();
+                        break;
+                    case 'courses':
+                        renderCourseDirectory();
+                        break;
+                    case 'course-detail':
+                        if (data && data.courseId) renderCourseDetail(data.courseId);
+                        break;
+                    case 'careers':
+                        renderCareerExplorer();
+                        break;
+                    case 'jobs':
+                        renderJobListings();
+                        break;
+                    case 'search':
+                        renderGlobalSearch();
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            // ──────────────────────────────────────────────
+            // TOAST
+            // ──────────────────────────────────────────────
+            function showToast(msg, duration = 2500) {
+                toast.textContent = msg;
+                toast.classList.add('show');
+                clearTimeout(toast._timeout);
+                toast._timeout = setTimeout(() => toast.classList.remove('show'), duration);
+            }
+
+            // ──────────────────────────────────────────────
+            // APS CALCULATOR
+            // ──────────────────────────────────────────────
+            function renderApsCalculator() {
+                const rowsContainer = document.getElementById('apsSubjectRows');
+                const maxSubjects = 7;
+                const minSubjects = 6;
+
+                function buildRows() {
+                    // Ensure at least minSubjects
+                    while (apsSubjects.length < minSubjects) {
+                        apsSubjects.push({ subject: '', level: 0 });
+                    }
+                    // Clamp to maxSubjects
+                    if (apsSubjects.length > maxSubjects) apsSubjects = apsSubjects.slice(0, maxSubjects);
+
+                    rowsContainer.innerHTML = apsSubjects.map((s, i) => {
+                        const levelOptions = '<option value="0">— Level —</option>' +
+                            [1, 2, 3, 4, 5, 6, 7].map(l =>
+                                `<option value="${l}" ${s.level===l?'selected':''}>Level ${l} (${l*10+20}–${l*10+29}%)</option>`
+                                ).join('');
+                        const subjectOptions = '<option value="">— Select Subject —</option>' +
+                            SUBJECTS.map(sub =>
+                                `<option value="${sub}" ${s.subject===sub?'selected':''}>${sub}</option>`
+                                ).join('');
+                        const points = s.level > 0 ? s.level : '—';
+                        const canRemove = apsSubjects.length > minSubjects;
+                        return `
+                  <div class="aps-subject-row">
+                    <select data-aps-index="${i}" data-aps-field="subject">${subjectOptions}</select>
+                    <select data-aps-index="${i}" data-aps-field="level">${levelOptions}</select>
+                    <span class="aps-points">${points}</span>
+                    ${canRemove ? `<button class="btn btn-outline btn-sm" data-aps-remove="${i}" style="padding:4px 8px;font-size:0.75rem;" title="Remove">✕</button>` : '<span style="width:34px;"></span>'}
+                  </div>`;
+                    }).join('');
+                    // Update remove button visibility for edge cases
+                    updateRemoveButtons();
+                }
+
+                function updateRemoveButtons() {
+                    const rows = rowsContainer.querySelectorAll('.aps-subject-row');
+                    const canRemove = apsSubjects.length > minSubjects;
+                    rows.forEach((row, i) => {
+                        let btn = row.querySelector('[data-aps-remove]');
+                        if (canRemove && !btn) {
+                            const span = row.querySelector('span.aps-points');
+                            const newBtn = document.createElement('button');
+                            newBtn.className = 'btn btn-outline btn-sm';
+                            newBtn.style.cssText = 'padding:4px 8px;font-size:0.75rem;';
+                            newBtn.title = 'Remove';
+                            newBtn.textContent = '✕';
+                            newBtn.dataset.apsRemove = i;
+                            newBtn.addEventListener('click', () => {
+                                apsSubjects.splice(i, 1);
+                                renderApsCalculator();
+                            });
+                            span.after(newBtn);
+                        } else if (!canRemove && btn) {
+                            btn.remove();
+                        }
+                    });
+                }
+
+                function calculateAPS() {
+                    let total = 0;
+                    let count = 0;
+                    apsSubjects.forEach(s => {
+                        if (s.level > 0) {
+                            total += s.level;
+                            count++;
+                        }
+                    });
+                    document.getElementById('apsTotalScore').textContent = count >= 6 ? total : '—';
+                    // Pass type
+                    const passEl = document.getElementById('apsPassType');
+                    if (count >= 6 && total >= 23) {
+                        passEl.textContent = '✅ Bachelor\'s Pass — You may qualify for university degree programmes.';
+                        passEl.style.color = 'var(--success)';
+                    } else if (count >= 6 && total >= 19) {
+                        passEl.textContent = '✅ Diploma Pass — You may qualify for diploma programmes.';
+                        passEl.style.color = '#d4770a';
+                    } else if (count >= 6 && total >= 14) {
+                        passEl.textContent = '✅ Higher Certificate Pass — Entry-level tertiary qualification possible.';
+                        passEl.style.color = '#d4770a';
+                    } else if (count >= 6) {
+                        passEl.textContent =
+                            '⚠️ NSC Pass — Limited tertiary options. Consider TVET Colleges or bridging courses.';
+                        passEl.style.color = 'var(--danger)';
+                    } else {
+                        passEl.textContent = 'Select at least 6 subjects with levels to see your pass type.';
+                        passEl.style.color = 'var(--text-muted)';
+                    }
+                    // Qualifying courses
+                    const qualList = document.getElementById('apsQualList');
+                    if (count >= 6 && total > 0) {
+                        const qualifying = COURSES.filter(c => total >= c.apsRequired).sort((a, b) => b
+                            .apsRequired - a.apsRequired);
+                        if (qualifying.length > 0) {
+                            qualList.innerHTML = qualifying.map(c =>
+                                `<span class="qual-course" data-course-id="${c.id}" title="Click to view details">${c.name} — ${c.institution} (APS: ${c.apsRequired}+)</span>`
+                                ).join('');
+                            // Add click handlers
+                            qualList.querySelectorAll('.qual-course').forEach(el => {
+                                el.addEventListener('click', () => {
+                                    navigateTo('course-detail', { courseId: parseInt(el.dataset
+                                            .courseId) });
+                                });
+                            });
+                        } else {
+                            qualList.innerHTML =
+                                '<span style="color:var(--text-muted);font-size:0.85rem;">No courses match your current APS. Try adjusting your levels or consider TVET College options.</span>';
+                        }
+                    } else {
+                        qualList.innerHTML =
+                            '<span style="color:var(--text-muted);font-size:0.85rem;">Select subjects & levels to see qualifying courses…</span>';
+                    }
+                }
+
+                buildRows();
+                calculateAPS();
+
+                // Event delegation
+                rowsContainer.onchange = (e) => {
+                    const sel = e.target;
+                    const index = parseInt(sel.dataset.apsIndex);
+                    const field = sel.dataset.apsField;
+                    if (!isNaN(index) && field && apsSubjects[index] !== undefined) {
+                        if (field === 'subject') apsSubjects[index].subject = sel.value;
+                        if (field === 'level') apsSubjects[index].level = parseInt(sel.value) || 0;
+                        renderApsCalculator();
+                    }
+                };
+                rowsContainer.onclick = (e) => {
+                    if (e.target.dataset.apsRemove) {
+                        const i = parseInt(e.target.dataset.apsRemove);
+                        if (!isNaN(i) && apsSubjects.length > minSubjects) {
+                            apsSubjects.splice(i, 1);
+                            renderApsCalculator();
+                        }
+                    }
+                };
+                document.getElementById('addSubjectBtn').onclick = () => {
+                    if (apsSubjects.length < 7) {
+                        apsSubjects.push({ subject: '', level: 0 });
+                        renderApsCalculator();
+                    } else {
+                        showToast('Maximum of 7 subjects allowed.');
+                    }
+                };
+                // Hide add button if at max
+                document.getElementById('addSubjectBtn').style.display = apsSubjects.length >= 7 ? 'none' : '';
+            }
+
+            // ──────────────────────────────────────────────
+            // COURSE DIRECTORY
+            // ──────────────────────────────────────────────
+            function renderCourseDirectory(filterText = '', filterField = '', filterType = '') {
+                const searchInput = document.getElementById('courseSearchInput');
+                const fieldFilter = document.getElementById('courseFieldFilter');
+                const typeFilter = document.getElementById('courseTypeFilter');
+                const grid = document.getElementById('courseCardsGrid');
+                const countEl = document.getElementById('courseCount');
+
+                // Sync filter state (if called programmatically)
+                if (filterText && searchInput) searchInput.value = filterText;
+                if (filterField && fieldFilter) fieldFilter.value = filterField;
+                if (filterType && typeFilter) typeFilter.value = filterType;
+
+                const ft = (searchInput ? searchInput.value : filterText).toLowerCase();
+                const ff = fieldFilter ? fieldFilter.value : filterField;
+                const ftp = typeFilter ? typeFilter.value : filterType;
+
+                let filtered = COURSES.filter(c => {
+                    const matchText = !ft || c.name.toLowerCase().includes(ft) || c.institution
+                        .toLowerCase().includes(ft) || c.field.toLowerCase().includes(ft);
+                    const matchField = !ff || c.field === ff;
+                    const matchType = !ftp || c.type === ftp;
+                    return matchText && matchField && matchType;
+                });
+
+                grid.innerHTML = filtered.map(c => `
+              <div class="card" data-course-id="${c.id}">
+                <span class="badge ${c.type==='TVET College'?'orange':''}">${c.type}</span>
+                <h3>${c.name}</h3>
+                <p class="institution">${c.institution} · ${c.campus}</p>
+                <div class="meta">
+                  <span>📋 APS: ${c.apsRequired}+</span>
+                  <span>⏱️ ${c.duration}</span>
+                  <span>📂 ${c.field}</span>
+                </div>
+              </div>
+            `).join('');
+                countEl.textContent = `Showing ${filtered.length} course(s)`;
+
+                // Click handlers
+                grid.querySelectorAll('.card').forEach(card => {
+                    card.addEventListener('click', () => {
+                        navigateTo('course-detail', { courseId: parseInt(card.dataset.courseId) });
+                    });
+                });
+            }
+
+            // ──────────────────────────────────────────────
+            // COURSE DETAIL
+            // ──────────────────────────────────────────────
+            function renderCourseDetail(courseId) {
+                const course = COURSES.find(c => c.id === courseId);
+                const container = document.getElementById('courseDetailContent');
+                if (!course) {
+                    container.innerHTML = '<p>Course not found. <a href="#" data-nav="courses">Browse courses</a>.</p>';
+                    return;
+                }
+                selectedCourseId = courseId;
+                const inst = INSTITUTIONS.find(i => i.name === course.institution);
+                container.innerHTML = `
+              <div class="detail-grid">
+                <div class="detail-card full-width">
+                  <span class="badge ${course.type==='TVET College'?'orange':''}">${course.type}</span>
+                  <h2 style="font-size:1.4rem;margin:8px 0;">${course.name}</h2>
+                  <p style="color:var(--text-secondary);">${course.institution} — ${course.campus}</p>
+                  <p style="margin-top:8px;">${course.description}</p>
+                </div>
+                <div class="detail-card">
+                  <h3>📋 Admission Requirements</h3>
+                  <p style="font-size:0.9rem;white-space:pre-line;">${course.requirements}</p>
+                  <p style="margin-top:8px;"><strong>Minimum APS:</strong> ${course.apsRequired}</p>
+                  <p><strong>Duration:</strong> ${course.duration}</p>
+                </div>
+                <div class="detail-card">
+                  <h3>💼 Careers This Leads To</h3>
+                  <div class="tag-list">
+                    ${course.careers.map(car => `<span class="tag" data-career-title="${car}" style="cursor:pointer;">${car}</span>`).join('')}
+                  </div>
+                </div>
+                <div class="detail-card full-width">
+                  <h3>🔗 Related Entry-Level Jobs</h3>
+                  <div id="relatedJobsList">
+                    ${JOBS.filter(j => course.careers.some(car => j.title.toLowerCase().includes(car.toLowerCase()) || car.toLowerCase().includes(j.title.toLowerCase()))).slice(0,4).map(j => `
+                      <div class="job-card" style="cursor:default;">
+                        <div class="job-info">
+                          <h4>${j.title}</h4>
+                          <span class="company">${j.company} — ${j.location}</span>
+                        </div>
+                        <span style="font-size:0.85rem;color:var(--text-muted);">${j.salary}</span>
+                      </div>
+                    `).join('') || '<p style="color:var(--text-muted);">No matching jobs found right now. Check the Jobs page.</p>'}
+                  </div>
+                </div>
+              </div>`;
+                // Career tag click handlers
+                container.querySelectorAll('.tag[data-career-title]').forEach(tag => {
+                    tag.addEventListener('click', () => {
+                        const careerTitle = tag.dataset.careerTitle;
+                        const career = CAREERS.find(c => c.title === careerTitle);
+                        if (career) {
+                            navigateTo('careers');
+                            setTimeout(() => showCareerDetail(career.id), 400);
+                        }
+                    });
+                });
+            }
+
+            // ──────────────────────────────────────────────
+            // CAREER EXPLORER
+            // ──────────────────────────────────────────────
+            function renderCareerExplorer() {
+                const searchInput = document.getElementById('careerSearchInput');
+                const fieldFilter = document.getElementById('careerFieldFilter');
+                const grid = document.getElementById('careerCardsGrid');
+                const countEl = document.getElementById('careerCount');
+                const detailContainer = document.getElementById('careerDetailInline');
+
+                const ft = (searchInput ? searchInput.value : '').toLowerCase();
+                const ff = fieldFilter ? fieldFilter.value : '';
+
+                let filtered = CAREERS.filter(c => {
+                    const matchText = !ft || c.title.toLowerCase().includes(ft) || c.field.toLowerCase()
+                        .includes(ft) || c.skills.some(s => s.toLowerCase().includes(ft));
+                    const matchField = !ff || c.field === ff;
+                    return matchText && matchField;
+                });
+
+                grid.innerHTML = filtered.map(c => {
+                    const demandClass = c.demand === 'high' ? 'demand-high' : c.demand === 'medium' ?
+                        'demand-medium' : 'demand-low';
+                    const demandLabel = c.demand.charAt(0).toUpperCase() + c.demand.slice(1);
+                    const salaryRange = `R${(c.salaryMin/1000).toFixed(0)}k–R${(c.salaryMax/1000).toFixed(0)}k`;
+                    const salaryPercent = Math.min(100, Math.round((c.salaryMin / 900000) * 100));
+                    return `
+                <div class="card" data-career-id="${c.id}">
+                  <span class="badge green">${c.field}</span>
+                  <h3>${c.title}</h3>
+                  <p style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:6px;">${c.description}</p>
+                  <p class="demand-indicator ${demandClass}">📊 Demand: ${demandLabel}</p>
+                  <p style="font-size:0.85rem;">💰 ${salaryRange}/year</p>
+                  <div class="salary-bar"><div class="salary-fill" style="width:${salaryPercent}%;"></div></div>
+                </div>`;
+                }).join('');
+                countEl.textContent = `Showing ${filtered.length} career(s)`;
+
+                grid.querySelectorAll('.card').forEach(card => {
+                    card.addEventListener('click', () => {
+                        showCareerDetail(parseInt(card.dataset.careerId));
+                    });
+                });
+
+                // Re-show detail if one was selected
+                if (selectedCareerId) {
+                    showCareerDetail(selectedCareerId);
+                }
+            }
+
+            function showCareerDetail(careerId) {
+                selectedCareerId = careerId;
+                const career = CAREERS.find(c => c.id === careerId);
+                const container = document.getElementById('careerDetailInline');
+                if (!career) { container.innerHTML = ''; return; }
+                const demandClass = career.demand === 'high' ? 'demand-high' : career.demand === 'medium' ?
+                    'demand-medium' : 'demand-low';
+                const salaryRange = `R${(career.salaryMin/1000).toFixed(0)}k–R${(career.salaryMax/1000).toFixed(0)}k`;
+                container.innerHTML = `
+              <div class="detail-card" style="margin-top:16px;border:2px solid var(--primary-light);">
+                <div style="display:flex;justify-content:space-between;align-items:start;flex-wrap:wrap;gap:12px;">
+                  <div>
+                    <span class="badge green">${career.field}</span>
+                    <h3 style="font-size:1.3rem;margin:6px 0;">${career.title}</h3>
+                    <p>${career.description}</p>
+                    <p class="demand-indicator ${demandClass}" style="margin-top:4px;">📊 Demand: ${career.demand.charAt(0).toUpperCase()+career.demand.slice(1)}</p>
+                    <p>💰 Salary Range: <strong>${salaryRange}/year</strong></p>
+                  </div>
+                  <button class="btn btn-outline btn-sm" onclick="document.getElementById('careerDetailInline').innerHTML='';selectedCareerId=null;">✕ Close</button>
+                </div>
+                <div style="margin-top:12px;">
+                  <strong>🎓 Study Paths:</strong>
+                  <div class="tag-list" style="margin-top:6px;">
+                    ${career.studyPaths.map(sp => `<span class="tag" data-course-name="${sp}" style="cursor:pointer;">${sp}</span>`).join('')}
+                  </div>
+                </div>
+                <div style="margin-top:8px;">
+                  <strong>🛠️ Key Skills:</strong> ${career.skills.join(', ')}
+                </div>
+                <div style="margin-top:10px;">
+                  <strong>💼 Related Jobs:</strong>
+                  ${JOBS.filter(j=>j.title.toLowerCase().includes(career.title.toLowerCase())||career.title.toLowerCase().includes(j.title.toLowerCase())).slice(0,3).map(j=>`<span style="display:inline-block;margin:4px 8px;font-size:0.85rem;">• ${j.title} at ${j.company} (${j.location})</span>`).join('') || 'None currently listed.'}
+                </div>
+              </div>`;
+                // Study path click handlers
+                container.querySelectorAll('.tag[data-course-name]').forEach(tag => {
+                    tag.addEventListener('click', () => {
+                        const courseName = tag.dataset.courseName;
+                        const course = COURSES.find(c => c.name === courseName);
+                        if (course) navigateTo('course-detail', { courseId: course.id });
+                    });
+                });
+                container.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+
+            // ──────────────────────────────────────────────
+            // JOB LISTINGS
+            // ──────────────────────────────────────────────
+            function renderJobListings() {
+                const searchInput = document.getElementById('jobSearchInput');
+                const locationFilter = document.getElementById('jobLocationFilter');
+                const container = document.getElementById('jobListings');
+                const countEl = document.getElementById('jobCount');
+
+                const ft = (searchInput ? searchInput.value : '').toLowerCase();
+                const fl = locationFilter ? locationFilter.value : '';
+
+                let filtered = JOBS.filter(j => {
+                    const matchText = !ft || j.title.toLowerCase().includes(ft) || j.company.toLowerCase()
+                        .includes(ft) || j.location.toLowerCase().includes(ft) || j.minQual.toLowerCase()
+                        .includes(ft);
+                    const matchLoc = !fl || j.location === fl;
+                    return matchText && matchLoc;
+                });
+
+                container.innerHTML = filtered.map(j => `
+              <div class="job-card">
+                <div class="job-info">
+                  <h4>${j.title}</h4>
+                  <span class="company">${j.company} — ${j.location} · ${j.type}</span>
+                  <div class="job-meta" style="margin-top:4px;">
+                    <span>📋 Min: ${j.minQual}</span>
+                    <span>🕐 ${j.posted}</span>
+                  </div>
+                </div>
+                <div style="text-align:right;">
+                  <strong style="color:var(--primary);">${j.salary}</strong>
+                  <br><button class="btn btn-accent btn-sm" style="margin-top:4px;">Apply</button>
+                </div>
+              </div>
+            `).join('');
+                countEl.textContent = `Showing ${filtered.length} job(s)`;
+                // Apply buttons
+                container.querySelectorAll('.btn-accent').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        showToast('🔗 Application link would open here (demo).');
+                    });
+                });
+                container.querySelectorAll('.job-card').forEach(card => {
+                    card.addEventListener('click', function(e) {
+                        if (e.target.closest('button')) return;
+                        showToast('📋 Job detail view would open here (demo).');
+                    });
+                });
+            }
+
+            // ──────────────────────────────────────────────
+            // GLOBAL SEARCH
+            // ──────────────────────────────────────────────
+            function renderGlobalSearch(query = '') {
+                const input = document.getElementById('globalSearchInput');
+                const resultsContainer = document.getElementById('globalSearchResults');
+                if (query && input) input.value = query;
+                const q = (input ? input.value : query).toLowerCase().trim();
+
+                if (!q) {
+                    resultsContainer.innerHTML =
+                        '<p style="text-align:center;color:var(--text-muted);">Type a search term to find courses, careers, jobs, or institutions.</p>';
+                    return;
+                }
+
+                const matchedCourses = COURSES.filter(c => c.name.toLowerCase().includes(q) || c.institution
+                    .toLowerCase().includes(q) || c.field.toLowerCase().includes(q));
+                const matchedCareers = CAREERS.filter(c => c.title.toLowerCase().includes(q) || c.field.toLowerCase()
+                    .includes(q));
+                const matchedJobs = JOBS.filter(j => j.title.toLowerCase().includes(q) || j.company.toLowerCase()
+                    .includes(q) || j.location.toLowerCase().includes(q));
+                const matchedInst = INSTITUTIONS.filter(i => i.name.toLowerCase().includes(q));
+
+                let html = '';
+                if (matchedCourses.length > 0) {
+                    html +=
+                        `<h3 style="margin-bottom:8px;">📚 Courses (${matchedCourses.length})</h3><div class="cards-grid" style="margin-bottom:16px;">`;
+                    matchedCourses.slice(0, 6).forEach(c => {
+                        html +=
+                            `<div class="card" data-course-id="${c.id}" style="cursor:pointer;"><span class="badge">${c.type}</span><h3>${c.name}</h3><p class="institution">${c.institution}</p></div>`;
+                    });
+                    html += '</div>';
+                }
+                if (matchedCareers.length > 0) {
+                    html +=
+                        `<h3 style="margin-bottom:8px;">💼 Careers (${matchedCareers.length})</h3><div class="cards-grid" style="margin-bottom:16px;">`;
+                    matchedCareers.slice(0, 4).forEach(c => {
+                        html +=
+                            `<div class="card" data-career-id="${c.id}" style="cursor:pointer;"><span class="badge green">${c.field}</span><h3>${c.title}</h3><p style="font-size:0.85rem;">${c.description}</p></div>`;
+                    });
+                    html += '</div>';
+                }
+                if (matchedJobs.length > 0) {
+                    html +=
+                        `<h3 style="margin-bottom:8px;">💻 Jobs (${matchedJobs.length})</h3>`;
+                    matchedJobs.slice(0, 5).forEach(j => {
+                        html +=
+                            `<div class="job-card"><div class="job-info"><h4>${j.title}</h4><span class="company">${j.company} — ${j.location}</span></div><span>${j.salary}</span></div>`;
+                    });
+                }
+                if (matchedInst.length > 0) {
+                    html +=
+                        `<h3 style="margin-bottom:8px;margin-top:12px;">🏛️ Institutions (${matchedInst.length})</h3>`;
+                    matchedInst.forEach(i => {
+                        html +=
+                            `<span class="tag" style="margin:4px;">${i.name} (${i.type})</span>`;
+                    });
+                }
+                if (!html) {
+                    html =
+                        '<p style="text-align:center;color:var(--text-muted);">No results found. Try a different search term.</p>';
+                }
+                resultsContainer.innerHTML = html;
+
+                // Click handlers for results
+                resultsContainer.querySelectorAll('.card[data-course-id]').forEach(card => {
+                    card.addEventListener('click', () => navigateTo('course-detail', { courseId: parseInt(card
+                            .dataset.courseId) }));
+                });
+                resultsContainer.querySelectorAll('.card[data-career-id]').forEach(card => {
+                    card.addEventListener('click', () => {
+                        navigateTo('careers');
+                        setTimeout(() => showCareerDetail(parseInt(card.dataset.careerId)), 400);
+                    });
+                });
+                resultsContainer.querySelectorAll('.job-card').forEach(card => {
+                    card.addEventListener('click', () => navigateTo('jobs'));
+                });
+            }
+
+            // ──────────────────────────────────────────────
+            // EVENT LISTENERS
+            // ──────────────────────────────────────────────
+            // Nav clicks
+            document.addEventListener('click', function(e) {
+                const navLink = e.target.closest('[data-nav]');
+                if (navLink) {
+                    e.preventDefault();
+                    const page = navLink.dataset.nav;
+                    navigateTo(page);
+                }
+                // Hero cards
+                const heroCard = e.target.closest('.hero-card[data-nav]');
+                if (heroCard) {
+                    e.preventDefault();
+                    navigateTo(heroCard.dataset.nav);
+                }
+                // Back buttons
+                const backBtn = e.target.closest('.back-btn[data-nav]');
+                if (backBtn) {
+                    e.preventDefault();
+                    navigateTo(backBtn.dataset.nav);
+                }
+            });
+
+            // Mobile menu
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('open');
+            });
+
+            // Hero search
+            document.getElementById('heroSearchBtn').addEventListener('click', () => {
+                const q = document.getElementById('heroSearchInput').value.trim();
+                if (q) {
+                    navigateTo('search');
+                    setTimeout(() => renderGlobalSearch(q), 300);
+                } else {
+                    navigateTo('search');
+                }
+            });
+            document.getElementById('heroSearchInput').addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    document.getElementById('heroSearchBtn').click();
+                }
+            });
+
+            // Global search
+            document.getElementById('globalSearchBtn').addEventListener('click', () => renderGlobalSearch());
+            document.getElementById('globalSearchInput').addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') renderGlobalSearch();
+            });
+            document.getElementById('globalSearchInput').addEventListener('input', () => {
+                const q = document.getElementById('globalSearchInput').value.trim();
+                if (q.length >= 2 || q.length === 0) renderGlobalSearch();
+            });
+
+            // Course filters
+            document.getElementById('courseSearchInput').addEventListener('input', () => renderCourseDirectory());
+            document.getElementById('courseFieldFilter').addEventListener('change', () => renderCourseDirectory());
+            document.getElementById('courseTypeFilter').addEventListener('change', () => renderCourseDirectory());
+            document.getElementById('resetCourseFilter').addEventListener('click', () => {
+                document.getElementById('courseSearchInput').value = '';
+                document.getElementById('courseFieldFilter').value = '';
+                document.getElementById('courseTypeFilter').value = '';
+                renderCourseDirectory();
+            });
+
+            // Career filters
+            document.getElementById('careerSearchInput').addEventListener('input', () => renderCareerExplorer());
+            document.getElementById('careerFieldFilter').addEventListener('change', () => renderCareerExplorer());
+
+            // Job filters
+            document.getElementById('jobSearchInput').addEventListener('input', () => renderJobListings());
+            document.getElementById('jobLocationFilter').addEventListener('change', () => renderJobListings());
+
+            // ──────────────────────────────────────────────
+            // INITIALIZATION
+            // ──────────────────────────────────────────────
+            function init() {
+                // Check URL hash
+                const hash = window.location.hash.replace('#', '');
+                const validPages = ['home', 'aps', 'courses', 'course-detail', 'careers', 'jobs', 'search'];
+                const startPage = validPages.includes(hash) ? hash : 'home';
+                navigateTo(startPage);
+                // Pre-render APS calculator if it's the start page
+                if (startPage === 'aps') renderApsCalculator();
+            }
+
+            // Handle browser back/forward
+            window.addEventListener('hashchange', () => {
+                const hash = window.location.hash.replace('#', '');
+                const validPages = ['home', 'aps', 'courses', 'course-detail', 'careers', 'jobs',
+                'search'];
+                if (validPages.includes(hash) && hash !== currentPage) {
+                    navigateTo(hash);
+                }
+            });
+
+            init();
+
+            console.log('✅ SA Education Guide frontend initialized.');
+            console.log('📋 Features: APS Calculator | Course Directory | Career Explorer | Job Listings | Global Search');
+            console.log('🔧 Ready for Django backend integration — replace mock data with API calls.');
+        })();
+    </script>
+</body>
 </html>
